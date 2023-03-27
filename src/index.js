@@ -1,13 +1,17 @@
 const express=require('express');
 const app=express();
 const path=require('path');
+const staticPath=path.join(__dirname,"../public");
+console.log(staticPath);
+app.use(express.static(staticPath));
+
 const viewPath=path.join(__dirname,"../temp/views");
 app.set("views",viewPath);
 app.set("view engine","hbs");
 const db=require("../db-config/db");
 const account=require('../routes/account');
 const port=process.env.port||3000;
-db();
+// db();
 
 console.log(viewPath);
 
