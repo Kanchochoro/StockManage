@@ -11,4 +11,13 @@ router.get('/login',(req,res)=>{
 });
 
 
+
+router.get('/register',(req,res)=>{
+      res.render('account/register',{
+        title:'Register Account',
+        heading:'Register a new user account',
+        layout:'layouts/login_register.hbs'
+    });
+});
+
 module.exports=router;
